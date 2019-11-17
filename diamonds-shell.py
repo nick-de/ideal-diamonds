@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import time
+import argparse
 
 def diamond(n = 7):
     if n%2 == 0:
@@ -14,6 +15,10 @@ def diamond(n = 7):
         d_list[i] = " "*buff+"*"*nt+" "*buff
 
     return(d_list)
+
+
+# took these colors from the following stack overflow thread
+# https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
 
 color_dict = {"p" : "\033[95m",
               "c" : "\033[96m",
@@ -59,6 +64,11 @@ def diamond_print2(iter_max = 1,
 
 
 if __name__== "__main__":
-    diamond_print2(iter_max = 3, color_vect = ["b", "r", "g"])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--iter_max", type=int, help="how many repeats?", required=True)
+    parser.add_argument("-c", "--colors",
+                        help='colors you would like to see, default "brg" ("blue red green")', default = "brg")
+    args = parser.parse_args()
+    diamond_print2(iter_max = args.iter_max, color_vect = list(args.colors))
 
 
