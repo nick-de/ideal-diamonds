@@ -18,11 +18,11 @@ def diamond(n = 7):
 
 
 # took these colors from the following stack overflow thread
-# https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
+# https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
 
 color_dict = {"p" : "\033[95m",
               "c" : "\033[96m",
-              "dc": "\033[36m",
+              "d": "\033[36m",
               "b" : "\033[36m",
               "g" : "\033[92m",
               "y" : "\033[93m",
